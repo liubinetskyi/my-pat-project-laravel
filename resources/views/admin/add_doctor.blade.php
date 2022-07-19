@@ -64,10 +64,10 @@
                     <label>Speciality</label>
                     <select name="Speciality" style="color:black" required="">
                         <option value="select">None</option>
-                        <option value="derma">Dermatologist</option>
-                        <option value="cardio">Cardiologist</option>
+                        <option value="dermatologist">Dermatologist</option>
+                        <option value="cardiologist">Cardiologist</option>
                         <option value="oculist">Oculist</option>
-                        <option value="lor">Otorhinolaryngologist</option>
+                        <option value="otorhinolaryngologist">Otorhinolaryngologist</option>
                     </select>
                 </div>
                 <div style="padding:25px;">
