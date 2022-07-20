@@ -87,6 +87,10 @@
 
             @auth
 
+            <li class="nav-item">
+              <a class="btn btn-outline-success" href="{{url('myappointment')}}">My Appointments</a>
+            </li>
+
             <x-app-layout>
             </x-app-layout>
 

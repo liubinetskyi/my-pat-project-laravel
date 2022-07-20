@@ -29,8 +29,9 @@
             <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.." required=""></textarea>
           </div>
         </div>
-
-        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+        <div class="col-12 text-center mt-4 wow zoomIn">
+          <button type="submit" class="btn btn-outline-primary mt-3 wow zoomIn">Submit Request</button>
+        </div>
       </form>
     </div>
   </div> <!-- .page-section -->
