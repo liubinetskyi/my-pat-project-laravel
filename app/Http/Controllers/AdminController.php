@@ -5,11 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
     public function createview(){
-        return view('admin.add_doctor');
+        if(Auth::id())
+        {
+            if(Auth::user()->usertype==1)
+            {
+                return view('admin.add_doctor');
+            }
+            else
+            {
+                return redirect()->back();
+            }
+        }
+        else
+        {
+            return redirect('login');
+        }
     }
 
     public function upload(Request $request){
@@ -28,8 +44,22 @@ class AdminController extends Controller
     }
 
     public function showappointment(){
-        $data=Appointment::all();
-        return view('admin.showappointment', compact('data'));
+        if(Auth::id())
+        {
+            if(Auth::user()->usertype==1)
+            {
+                $data=Appointment::all();
+                return view('admin.showappointment', compact('data'));
+            }
+            else
+            {
+                return redirect()->back();
+            }
+        }
+        else
+        {
+            return redirect('login');
+        }
     }
 
     public function approve($id){
