@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/public">
     <style type="text/css">
         label{
             display: inline-block;
@@ -79,7 +80,7 @@
                     <input type="file" name="file" required="">
                 </div>
                 <div style="padding:25px;">
-                    <input type="submit" class="btn btn-succsess">
+                        <input type="submit" class="btn btn-outline-success">
                 </div>
 
             </form>
