@@ -77,7 +77,7 @@
                     </div>
                     <div style="padding:25px;">
                         <label>Old Image</label>
-                        <img height="150" width="150" src="doctorimage/{{$data->image}}">
+                        <img height="150" width="150" src="/storage/doctorimage/{{$data->image}}">
                     </div>
                     <div style="padding:25px;">
                         <label>Change Image</label>

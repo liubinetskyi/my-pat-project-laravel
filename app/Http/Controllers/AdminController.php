@@ -94,7 +94,7 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
-    
+
     public function editdoctor(Request $request, $id){
         $doctor=Doctor::find($id);
 
@@ -103,18 +103,18 @@ class AdminController extends Controller
         $doctor->speciality=$request->specialty;
         $doctor->office=$request->office;
         $image=$request->file;
-        
+
         if($image)
         {
 
         $imagename=time().'.'.$image->getClientOriginalExtension();
-        $request->file->move('doctorimage', $imagename);
+        $request->file->storeAs('/public/doctorimage', $imagename);
         $doctor->image=$imagename;
-        
+
         }
 
         $doctor->save();
-        
+
         return redirect()->back()->with('message', 'Doctor Updated');
     }
 }
