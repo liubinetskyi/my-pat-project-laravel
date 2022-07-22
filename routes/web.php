@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\AdminController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +30,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');  
+    })->name('dashboard');
 });
 
 Route::get('/add_doctor', [AdminController::class, 'createview']);
@@ -44,3 +45,4 @@ Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
 Route::get('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
+
