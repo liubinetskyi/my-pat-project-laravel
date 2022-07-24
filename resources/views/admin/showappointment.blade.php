@@ -32,7 +32,6 @@
                             <th style="padding: 20px;">Message</th>
                             <th style="padding: 20px;">Status</th>
                             <th style="padding: 20px;">Action</th>
-                            <!---->
                         </tr>
                     </thead>
                     @foreach($data as $appoint)
