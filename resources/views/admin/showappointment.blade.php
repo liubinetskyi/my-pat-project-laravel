@@ -35,7 +35,7 @@
                         </tr>
                     </thead>
                     @foreach($data as $appoint)
-                    <tbody align="center">
+                    <tbody>
                         <tr>
                             <td>{{$appoint->name}}</td>
                             <td>{{$appoint->email}}</td>
@@ -45,14 +45,17 @@
                             <td>{{$appoint->message}}</td>
                             <td>{{$appoint->status}}</td>
 
-                            <td><a class="btn btn-success" href="{{url('approve', $appoint->id)}}">Approve</a>
-                                <a class="btn btn-danger" href="{{url('cancel', $appoint->id)}}">Cancele</a></td>
+                            <td><a class="btn btn-outline-success" href="{{url('approve', $appoint->id)}}">Approve</a>
+                                <a class="btn btn-outline-danger" href="{{url('cancel', $appoint->id)}}">Cancele</a>
+                                <a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger" href="{{url('delete', $appoint->id)}}">Delete</a>
+                            </td>
                         </tr>
                     </tbody>
                     @endforeach
                 </table>
             </div>
         </div>
+    </div>>
 
     <!-- container-scroller -->
     <!-- plugins:js -->

@@ -49,14 +49,15 @@
                     <input type="number" style="color:black" name="Number" placeholder="Enter the number..." required="">
                 </div>
                 <div style="padding:25px;">
-                    <label>Speciality</label>
-                    <select name="Speciality" style="color:black" required="">
-                        <option value="select">None</option>
-                        <option value="dermatologist">Dermatologist</option>
-                        <option value="cardiologist">Cardiologist</option>
-                        <option value="oculist">Oculist</option>
-                        <option value="otorhinolaryngologist">Otorhinolaryngologist</option>
-                    </select>
+                    <label>Specialty</label>
+                        <select name="specialty" style="color:black">
+                            <option value="select">None</option>
+                            <option value="dermatologist">Dermatologist</option>
+                            <option value="cardiologist">Cardiologist</option>
+                            <option value="oculist">Oculist</option>
+                            <option value="otorhinolaryngologist">Otorhinolaryngologist</option>
+                        </select>
+                    </label>
                 </div>
                 <div style="padding:25px;">
                     <label>Office No.</label>

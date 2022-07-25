@@ -32,12 +32,12 @@ class AdminController extends Controller
         $doctor=new doctor;
         $image=$request->file;
         $imagename=time().'.'.$image->getClientOriginalExtension();
-        $request->file->move('doctorimage',$imagename);
+        $request->file->storeAs('/public/doctorimage', $imagename);
         $doctor->image=$imagename;
         $doctor->name=$request->Name;
         $doctor->phone=$request->Number;
         $doctor->office=$request->Office;
-        $doctor->speciality=$request->Speciality;
+        $doctor->speciality=$request->specialty;
 
         $doctor->save();
         return redirect()->back()->with('message', 'Complete');
@@ -75,6 +75,12 @@ class AdminController extends Controller
         $data->status='Canceled';
         $data->save();
 
+        return redirect()->back();
+    }
+
+    public function delete($id){
+        $data=Appointment::find($id);
+        $data->delete();
         return redirect()->back();
     }
 
