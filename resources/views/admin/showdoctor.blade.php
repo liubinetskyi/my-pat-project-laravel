@@ -40,7 +40,7 @@
                             <td>{{$doctor->phone}}</td>
                             <td>{{$doctor->speciality}}</td>
                             <td>{{$doctor->office}}</td>
-                            <td><img src="storage/doctorimage/{{$doctor->image}}"></td>
+                            <td><img src="/storage/doctorimage/{{$doctor->image}}"></td>
 
                             <td><a onclick="return confirm('Are you sure you want to update?')" class="btn btn-success" href="{{url('updatedoctor', $doctor->id)}}">Update</a></td>
                             <td><a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger" href="{{url('deletedoctor', $doctor->id)}}">Delete</a></td>
