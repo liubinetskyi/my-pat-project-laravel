@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Notifications\SendEmailNotification;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use Illuminate\Support\Facades\Auth;
+use Notification;
 
 
 class AdminController extends Controller
@@ -122,5 +124,25 @@ class AdminController extends Controller
         $doctor->save();
 
         return redirect()->back()->with('message', 'Doctor Updated');
+    }
+    public function emailview($id){
+
+        $data=appointment::find($id);
+        return view('admin.email_view', compact('data'));
+    }
+    public function sendemail(Request $request, $id){
+
+        $data = appointment::find($id);
+        $details = [
+            'greeting' => $request->greeting,
+            'maintext' => $request->maintext,
+            'linktext' => $request->linktext,
+            'link' => $request->link,
+            'end' => $request->end
+        ];
+
+        Notification::send($data, new SendEmailNotification($details));
+
+        return redirect()->back()->with('message', 'Mail Send!');
     }
 }

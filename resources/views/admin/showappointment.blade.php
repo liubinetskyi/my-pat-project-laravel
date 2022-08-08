@@ -32,6 +32,7 @@
                             <th style="padding: 20px;">Message</th>
                             <th style="padding: 20px;">Status</th>
                             <th style="padding: 20px;">Action</th>
+                            <th style="padding: 20px;">Send E-Mail</th>
                         </tr>
                     </thead>
                     @foreach($data as $appoint)
@@ -49,6 +50,7 @@
                                 <a class="btn btn-outline-danger" href="{{url('cancel', $appoint->id)}}">Cancele</a>
                                 <a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger" href="{{url('delete', $appoint->id)}}">Delete</a>
                             </td>
+                            <td><a class="btn btn-success" href="{{url('emailview', $appoint->id)}}}}">Send Mail</a></td>
                         </tr>
                     </tbody>
                     @endforeach

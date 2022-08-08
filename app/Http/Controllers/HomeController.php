@@ -15,7 +15,7 @@ use App\Models\Appointment;
 class HomeController extends Controller
 {
     public function redirect(){
-        
+
         if(Auth::id()){
             if(Auth::user()->usertype=='0'){
                 $doctor = doctor::all();
@@ -38,12 +38,12 @@ class HomeController extends Controller
         }
 
         else
-        
+
         {
         $doctor = doctor::all();
         return view('user.home', compact('doctor'));
         }
-    } 
+    }
 
 
     public function appointment(Request $request){
@@ -80,7 +80,7 @@ class HomeController extends Controller
             {
                 return redirect()->back();
             }
-            
+
         }
         else
         {
